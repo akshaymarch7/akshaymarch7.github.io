@@ -7,7 +7,7 @@ var theForm = document.getElementById( 'theForm' );
         onSubmit : function( form ) {
           // hide form
           classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-          console.log("Submitted Request");
+          //console.log("Submitted Request");
 
           var link="https://docs.google.com/forms/d/e/1FAIpQLSd1JpwNaH-iBJ80_9PvKD3zPXbIGor10O6msHvIIP1MRgfbcw/formResponse";
           jQuery.ajax({
