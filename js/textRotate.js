@@ -53,7 +53,7 @@ $(document).ready(function() {
     });//end document ready
     function changeImage(){
         $(".downloadCV").html("<p>Download my Resume</p><img src='img/dwnld.gif'>");
-        window.open("https://docs.google.com/uc?authuser=0&id=0BzUOptk4o8-NY0xOVnBKOTBDdm8&export=download","_blank");
+        //window.open("https://docs.google.com/uc?authuser=0&id=0BzUOptk4o8-NY0xOVnBKOTBDdm8&export=download","_blank");
         $(".resume").addClass("downloaded");
         $(".downloaded").removeClass("resume");
        }
