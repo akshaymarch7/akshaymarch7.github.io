@@ -1,5 +1,0 @@
-{
-  "holi" : function(){
-    alert("Hello World");
-  }
-}
