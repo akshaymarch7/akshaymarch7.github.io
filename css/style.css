@@ -316,6 +316,7 @@ section.about p a:hover {
 section.about img {
   display:block;
   margin:auto;
+  border-radius: 50%;
 }
 section.about h2 {
   font-family:'ProximaNova';
@@ -773,6 +774,10 @@ span.title {
 .fa-facebook-official {
   font-size:3em !important;
   color:#3b5998;
+}
+.fa-youtube-play {
+  font-size:3em !important;
+  color: red;
 }
 .fa-linkedin-square {
   font-size:3em !important;
