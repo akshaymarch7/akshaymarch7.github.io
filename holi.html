@@ -15,7 +15,7 @@
       document.execCommand("copy");
       document.querySelector("button").innerHTML="Copied!"
     }
-  fetch("http://akshaysaini.in/js/holi.js").then((res)=>res.text()).then((res)=>{
+  fetch("https://akshaysaini.in/js/holi.js").then((res)=>res.text()).then((res)=>{
     if(res.substring(0,3) !== "var"){
       window.location.reload();
     }
