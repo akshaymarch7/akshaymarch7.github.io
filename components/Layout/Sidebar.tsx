@@ -12,13 +12,17 @@ interface FileTreeItemProps {
 
 const FileTreeItem: React.FC<FileTreeItemProps> = ({ node, level, onOpenFile }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const { activeFileId } = useEditor();
+  const { activeFileId, openFile, setSidebarVisible } = useEditor();
 
   const handleClick = () => {
-    if (node.type === FileType.FOLDER) {
-      setIsOpen(!isOpen);
+    if (node.type === FileType.FILE) {
+      openFile(node.id);
+      // Auto-close on mobile
+      if (window.innerWidth < 768) {
+        setSidebarVisible(false);
+      }
     } else {
-      onOpenFile(node.id);
+      setIsOpen(!isOpen);
     }
   };
 
@@ -26,13 +30,13 @@ const FileTreeItem: React.FC<FileTreeItemProps> = ({ node, level, onOpenFile }) 
     if (node.type === FileType.FOLDER) {
       return isOpen ? <FolderOpen size={16} className="text-blue-400" /> : <Folder size={16} className="text-blue-400" />;
     }
-    
+
     switch (node.language) {
-        case 'typescript': return <FileCode size={16} className="text-blue-400" />;
-        case 'json': return <FileJson size={16} className="text-yellow-400" />;
-        case 'css': return <Hash size={16} className="text-blue-300" />;
-        case 'markdown': return <FileIcon size={16} className="text-purple-400" />;
-        default: return <FileIcon size={16} className="text-gray-400" />;
+      case 'typescript': return <FileCode size={16} className="text-blue-400" />;
+      case 'json': return <FileJson size={16} className="text-yellow-400" />;
+      case 'css': return <Hash size={16} className="text-blue-300" />;
+      case 'markdown': return <FileIcon size={16} className="text-purple-400" />;
+      default: return <FileIcon size={16} className="text-gray-400" />;
     }
   };
 
@@ -71,9 +75,9 @@ export const Sidebar: React.FC = () => {
   if (!sidebarVisible) return null;
 
   return (
-    <div 
-        className="bg-vscode-sidebar flex flex-col border-r border-[#1e1e1e] shrink-0"
-        style={{ width: sidebarWidth }}
+    <div
+      className="bg-vscode-sidebar flex flex-col border-r border-[#1e1e1e] shrink-0"
+      style={{ width: sidebarWidth }}
     >
       <div className="h-9 px-4 flex items-center text-xs font-medium tracking-wide uppercase text-gray-400 select-none">
         Explorer

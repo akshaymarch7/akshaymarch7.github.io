@@ -1,8 +1,13 @@
 import React from 'react';
+import { Seo } from '../SEO/Seo';
 
 export const AboutTab: React.FC = () => {
   return (
     <div className="p-8 h-full overflow-y-auto font-sans max-w-4xl">
+      <Seo
+        title="About Me - Akshay Saini"
+        description="Learn more about Akshay Saini, a software engineer and educator based in India."
+      />
       <h1 className="text-3xl font-bold mb-4 pb-2 border-b border-vscode-activity text-vscode-text">README.md</h1>
 
       <div className="space-y-6 text-vscode-text">

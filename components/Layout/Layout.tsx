@@ -1,14 +1,16 @@
 import React, { useCallback } from 'react';
+import { X, ChevronUp, ChevronDown } from 'lucide-react';
 import { ActivityBar } from './ActivityBar';
 import { Sidebar } from './Sidebar';
 import { EditorArea } from './EditorArea';
 import { StatusBar } from './StatusBar';
 import { Terminal } from './Terminal';
 import { useEditor } from '../../context/EditorContext';
+import { Seo } from '../SEO/Seo';
 
 export const Layout: React.FC = () => {
   const {
-    setSidebarWidth, sidebarVisible,
+    setSidebarWidth, sidebarVisible, setSidebarVisible,
     terminalHeight, setTerminalHeight, terminalVisible,
     toggleTerminal
   } = useEditor();
@@ -99,9 +101,30 @@ export const Layout: React.FC = () => {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-vscode-bg text-vscode-text font-sans">
+      <Seo
+        title="Akshay Saini | Portfolio"
+        description="Portfolio of Akshay Saini, Software Engineer and Educator."
+        keywords={['Akshay Saini', 'Portfolio', 'Software Engineer', 'Web Development', 'React']}
+      />
       <div className="flex flex-1 overflow-hidden">
         <ActivityBar />
-        <Sidebar />
+
+        {/* Sidebar - Overlay on Mobile, Relative on Desktop */}
+        <div className={`
+            absolute md:relative z-20 h-full flex transition-all duration-300 ease-in-out
+            ${sidebarVisible ? 'translate-x-0' : '-translate-x-full md:translate-x-0 md:hidden'}
+            ${!sidebarVisible && 'md:!hidden'}
+        `}>
+          <Sidebar />
+        </div>
+
+        {/* Backdrop for Mobile Sidebar */}
+        {sidebarVisible && (
+          <div
+            className="fixed inset-0 bg-black/50 z-10 md:hidden"
+            onClick={() => setSidebarVisible(false)}
+          />
+        )}
 
         {/* Sidebar Resizer */}
         {sidebarVisible && (

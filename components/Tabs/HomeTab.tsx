@@ -5,11 +5,15 @@ export const HomeTab: React.FC = () => {
   const { openFile } = useEditor();
 
   return (
-    <div className="p-8 h-full overflow-y-auto bg-vscode-bg text-vscode-text font-sans selection:bg-vscode-selection">
+    <div className="p-8 h-full overflow-y-auto bg-vscode-bg text-gray-300 font-sans selection:bg-vscode-selection">
       <div className="max-w-3xl mx-auto mt-10">
-        <h1 className="text-5xl font-bold mb-6 text-vscode-text tracking-tight">
-          Hello, I'm <span className="text-vscode-accent">Akshay Saini</span>
-        </h1>
+        <div className="flex flex-col md:flex-row items-start justify-between">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+              Hello, I'm <span className="text-vscode-accent">Akshay Saini</span>
+            </h1>
+          </div>
+        </div>
 
         <div className="font-mono text-sm mb-8 bg-vscode-sidebar p-4 border border-vscode-activity rounded-md inline-block">
           <span className="text-vscode-keyword">const</span> <span className="text-vscode-function">developer</span> = {`{`}
@@ -27,16 +31,16 @@ export const HomeTab: React.FC = () => {
           Creator of <strong className="text-vscode-text font-bold">Namaste JavaScript</strong> and formerly at Uber & PayTM.
         </p>
 
-        <div className="flex gap-4 mt-8">
+        <div className="flex flex-col md:flex-row gap-4">
           <button
             onClick={() => openFile('projects')}
-            className="px-6 py-2 bg-vscode-accent hover:bg-blue-600 text-white font-medium rounded-sm transition-colors"
+            className="px-6 py-3 bg-vscode-button text-white rounded hover:bg-opacity-90 transition-colors font-medium"
           >
             View Projects
           </button>
           <button
             onClick={() => openFile('contact')}
-            className="px-6 py-2 bg-[#3c3c3c] hover:bg-[#4c4c4c] text-white font-medium rounded-sm transition-colors"
+            className="px-6 py-3 border border-vscode-button text-vscode-button rounded hover:bg-vscode-button hover:text-white transition-colors font-medium"
           >
             Contact Me
           </button>

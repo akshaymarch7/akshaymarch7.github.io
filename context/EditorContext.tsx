@@ -13,6 +13,29 @@ export const EditorProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [terminalHeight, setTerminalHeight] = useState(200);
   const [theme, setTheme] = useState<Theme>('dark');
 
+  // Mobile Detection
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSidebarVisible(false);
+        setTerminalVisible(false);
+      } else {
+        setSidebarVisible(true);
+        setTerminalVisible(true);
+      }
+    };
+
+    // Set initial state
+    if (window.innerWidth < 768) {
+      setSidebarVisible(false);
+      setTerminalVisible(false);
+    }
+
+    // Optional: We could listen to resize, but usually IDEs don't auto-hide on resize
+    // window.addEventListener('resize', handleResize);
+    // return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Apply theme class to body
   useEffect(() => {
     if (theme === 'light') {
@@ -36,7 +59,7 @@ export const EditorProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const closeFile = (fileId: string) => {
     const newOpenFiles = openFiles.filter((id) => id !== fileId);
     setOpenFiles(newOpenFiles);
-    
+
     if (activeFileId === fileId) {
       if (newOpenFiles.length > 0) {
         // Activate the last opened file

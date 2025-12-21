@@ -1,12 +1,15 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { EditorProvider } from './context/EditorContext';
 import { Layout } from './components/Layout/Layout';
 
 const App: React.FC = () => {
   return (
-    <EditorProvider>
-      <Layout />
-    </EditorProvider>
+    <HelmetProvider>
+      <EditorProvider>
+        <Layout />
+      </EditorProvider>
+    </HelmetProvider>
   );
 };
 
