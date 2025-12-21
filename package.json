@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://akshaymarch7.github.io",
+  "homepage": "https://akshaysaini.in",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
