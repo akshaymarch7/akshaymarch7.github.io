@@ -1,20 +1,72 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Akshay Saini - Portfolio IDE
 
-# Run and deploy your AI Studio app
+```text
+██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗
+██║  ██║██╔════╝██║     ██║     ██╔═══██╗    ██║    ██║██╔═══██╗██╔══██╗██║     ██╔══██╗
+███████║█████╗  ██║     ██║     ██║   ██║    ██║ █╗ ██║██║   ██║██████╔╝██║     ██║  ██║
+██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║
+██║  ██║███████╗███████╗███████╗╚██████╔╝    ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝
+╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝
+```
 
-This contains everything you need to run your app locally.
+## Preface
 
-View your app in AI Studio: https://ai.studio/apps/drive/1W3gz-FzALUuFRl4SGf9T-94YHUxecN4p
+*When I wrote this code, only God and I understood what I was doing.*  
+*Now, only God knows.*    
 
-## Run Locally
+*If you don't like anything on this website, bite me !*  
 
-**Prerequisites:**  Node.js
+**No copyright issues.**  
+Feel free to copy anything and everything from this website.  
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+Cheers,  
+**Akshay Saini**  
+https://akshaysaini.in
+
+PS:  
+I sincerely admit!  
+All the code you see in this repo is random AI generated dump. 
+For any bugs or issues, just blame Anthropic
+
+*SSSssshhhhh!! Important information below...*  
+
+
+## 🛠️ The "I Can Center A Div" Stack
+
+```json
+{
+  "frontend": ["React", "TypeScript", "TailwindCSS"],
+  "backend": ["Node.js", "Coffee", "Panic"],
+  "deployment": "Github Pages (because AWS is scary)",
+  "vibe": "Dark Mode Only"
+}
+```
+
+## ⌨️ For The Power Users (Shortcuts)
+
+Don't use your mouse. It's 2024.
+
+| Shortcut | Action | Why? |
+|----------|--------|------|
+| `Cmd + K` | **Search** | Because finding things is hard. |
+| `Ctrl + P` | **Quick Open** | Pretend you're busy switching files. |
+| `Alt + T` | **Toggle Terminal** | Look like a hacker. |
+| `Ctrl + S` | **Save** | Does nothing, but muscle memory is satisfied. |
+
+## 🚀 Usage
+
+You can clone me (the repo, not the person):
+
+```bash
+git clone git@github.com:akshaymarch7/portfolio-ide.git
+cd portfolio-ide
+npm install      # Downloads half the internet
+npm run dev      # Run this at your own risk magic
+```
+
+---
+*MIT License © 2025 Akshay Saini. No bugs, just undocumented features.*
+
+Made with ❤️ in India
