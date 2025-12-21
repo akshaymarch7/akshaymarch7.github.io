@@ -100,7 +100,7 @@ export const Layout: React.FC = () => {
   }, [terminalHeight, setTerminalHeight]);
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-vscode-bg text-vscode-text font-sans">
+    <div className="flex flex-col h-[100dvh] w-screen bg-vscode-bg text-vscode-text font-sans">
       <Seo
         title="Akshay Saini | Portfolio"
         description="Portfolio of Akshay Saini, Software Engineer and Educator."
