@@ -1,8 +1,14 @@
 import React from 'react';
+import { Seo } from '../SEO/Seo';
 
 export const ContactTab: React.FC = () => {
   return (
     <div className="p-4 h-full overflow-y-auto font-mono text-sm leading-6">
+      <Seo
+        title="Contact Me - Akshay Saini"
+        description="Get in touch with Akshay Saini, Software Engineer and Educator."
+        keywords={['Contact', 'Akshay Saini', 'Email', 'Social Media']}
+      />
       <div className="text-vscode-comment mb-4">/* Reach out to me anytime! */</div>
 
       <div className="hover:bg-vscode-lineHighlight p-1 rounded">

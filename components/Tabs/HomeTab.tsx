@@ -1,4 +1,5 @@
 import React from 'react';
+import { Seo } from '../SEO/Seo';
 import { useEditor } from '../../context/EditorContext';
 
 export const HomeTab: React.FC = () => {
@@ -6,6 +7,11 @@ export const HomeTab: React.FC = () => {
 
   return (
     <div className="p-8 h-full overflow-y-auto bg-vscode-bg text-gray-300 font-sans selection:bg-vscode-selection">
+      <Seo
+        title="Home - Akshay Saini"
+        description="Akshay Saini - Software Engineer, Educator, and Creator of Namaste JavaScript."
+        keywords={['Akshay Saini', 'Namaste JavaScript', 'Software Engineer', 'Educator']}
+      />
       <div className="max-w-3xl mx-auto mt-10">
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Seo } from '../SEO/Seo';
 
 const projects = [
   {
@@ -41,6 +42,11 @@ const projects = [
 export const ProjectsTab: React.FC = () => {
   return (
     <div className="p-4 h-full overflow-y-auto font-mono text-sm leading-6">
+      <Seo
+        title="Projects - Akshay Saini"
+        description="Check out my projects including Namaste JavaScript, Namaste React, and more."
+        keywords={['Projects', 'Namaste JavaScript', 'Namaste React', 'Akshay Saini']}
+      />
       <div className="font-mono text-sm overflow-x-auto whitespace-pre-wrap">
         <span className="text-vscode-keyword">const</span> <span className="text-vscode-function">projects</span> = [<span className="text-vscode-text">=</span> <span className="text-vscode-text">[</span>
       </div>

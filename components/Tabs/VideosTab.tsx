@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Seo } from '../SEO/Seo';
 
 interface Video {
     title: string;
@@ -32,9 +33,13 @@ export const VideosTab: React.FC = () => {
 
     return (
         <div className="p-6 h-full overflow-y-auto bg-vscode-bg font-sans">
+            <Seo
+                title="Videos - Akshay Saini"
+                description="Watch the latest software engineering tutorials and talks by Akshay Saini."
+                keywords={['YouTube', 'Videos', 'Tutorials', 'Akshay Saini']}
+            />
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-vscode-text">Latest Videos from YouTube - <a className="underline" href="https://www.youtube.com/@akshaysaini" target="_blank" rel="noreferrer">Akshay Saini</a></h2>
-                <span className="text-xs bg-vscode-activity px-2 py-1 rounded text-vscode-text opacity-50">Fetching from YouTube API...</span>
             </div>
 
             {loading ? (
