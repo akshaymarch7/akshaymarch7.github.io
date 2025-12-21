@@ -14,7 +14,7 @@
 *When I wrote this code, only God and I understood what I was doing.*  
 *Now, only God knows.*    
 
-*If you don't like anything on this website, bite me !*  
+*If you don't like anything on this website, it's not me, just blame AI !*  
 
 **No copyright issues.**  
 Feel free to copy anything and everything from this website.  
@@ -28,7 +28,7 @@ https://akshaysaini.in
 PS:  
 I sincerely admit!  
 All the code you see in this repo is random AI generated dump. 
-For any bugs or issues, just blame Anthropic
+For any bugs or issues, just blame Gemini & Opus.
 
 *SSSssshhhhh!! Important information below...*  
 
