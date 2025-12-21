@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://akshaymarch7.github.io/portfolio-ide",
+  "homepage": "https://akshaymarch7.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
