@@ -41,9 +41,12 @@ export const ContactTab: React.FC = () => {
       </div>
 
       <div className="mt-8">
-        <button className="bg-vscode-accent text-white px-4 py-2 hover:bg-blue-600 transition-colors font-sans rounded-sm text-xs">
+        <a
+          href="mailto:akshay@namaste.dev"
+          className="bg-vscode-accent text-white px-4 py-2 hover:bg-blue-600 transition-colors font-sans rounded-sm text-xs inline-block"
+        >
           Send Message
-        </button>
+        </a>
       </div>
     </div>
   );

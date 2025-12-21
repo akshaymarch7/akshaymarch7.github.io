@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { X, ChevronUp, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { ActivityBar } from './ActivityBar';
 import { Sidebar } from './Sidebar';
 import { EditorArea } from './EditorArea';

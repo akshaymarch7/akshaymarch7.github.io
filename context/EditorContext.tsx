@@ -31,9 +31,6 @@ export const EditorProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       setTerminalVisible(false);
     }
 
-    // Optional: We could listen to resize, but usually IDEs don't auto-hide on resize
-    // window.addEventListener('resize', handleResize);
-    // return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Apply theme class to body
