@@ -10,30 +10,30 @@ const videos = [
 ];
 
 export const VideosTab: React.FC = () => {
-  return (
-    <div className="p-6 h-full overflow-y-auto bg-vscode-bg font-sans">
-       <div className="flex items-center justify-between mb-6">
-           <h2 className="text-xl font-bold text-white">Popular Videos</h2>
-           <span className="text-xs bg-[#333] px-2 py-1 rounded text-gray-400">Component: VideoGrid.tsx</span>
-       </div>
-       
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-           {videos.map((vid, idx) => (
-               <div key={idx} className="bg-[#252526] hover:bg-[#2d2d2d] transition-colors rounded-lg overflow-hidden border border-[#333] group cursor-pointer">
-                   <div className="relative">
-                        <img src={vid.thumb} alt={vid.title} className="w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                        <div className="absolute bottom-2 right-2 bg-black/80 px-1.5 py-0.5 text-xs rounded text-white">{vid.duration}</div>
-                   </div>
-                   <div className="p-3">
-                       <h3 className="font-medium text-gray-200 group-hover:text-vscode-accent transition-colors truncate">{vid.title}</h3>
-                       <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
-                           <span>Namaste JavaScript</span>
-                           <span>{vid.views}</span>
-                       </div>
-                   </div>
-               </div>
-           ))}
-       </div>
-    </div>
-  );
+    return (
+        <div className="p-6 h-full overflow-y-auto bg-vscode-bg font-sans">
+            <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-vscode-text">Popular Videos</h2>
+                <span className="text-xs bg-vscode-activity px-2 py-1 rounded text-vscode-text opacity-50">Component: VideoGrid.tsx</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {videos.map((vid, idx) => (
+                    <div key={idx} className="bg-vscode-sidebar hover:bg-vscode-lineHighlight transition-colors rounded-lg overflow-hidden border border-vscode-activity group cursor-pointer">
+                        <div className="relative">
+                            <img src={vid.thumb} alt={vid.title} className="w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute bottom-2 right-2 bg-black/80 px-1.5 py-0.5 text-xs rounded text-white">{vid.duration}</div>
+                        </div>
+                        <div className="p-3">
+                            <h3 className="font-medium text-vscode-text group-hover:text-vscode-accent transition-colors truncate">{vid.title}</h3>
+                            <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
+                                <span>Namaste JavaScript</span>
+                                <span>{vid.views}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 };

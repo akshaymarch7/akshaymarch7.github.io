@@ -1,4 +1,4 @@
-# Akshay Saini - Portfolio IDE
+# akshaysaini.in
 
 ```text
 ██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗
@@ -46,7 +46,7 @@ For any bugs or issues, just blame Anthropic
 
 ## ⌨️ For The Power Users (Shortcuts)
 
-Don't use your mouse. It's 2024.
+Don't use your mouse. It's 2050 already.
 
 | Shortcut | Action | Why? |
 |----------|--------|------|
@@ -63,10 +63,10 @@ You can clone me (the repo, not the person):
 git clone git@github.com:akshaymarch7/portfolio-ide.git
 cd portfolio-ide
 npm install      # Downloads half the internet
-npm run dev      # Run this at your own risk magic
+npm run dev      # Run this at your own risk 
 ```
 
 ---
-*MIT License © 2025 Akshay Saini. No bugs, just undocumented features.*
+*MIT License © 2025 Akshay Saini.*
 
 Made with ❤️ in India
