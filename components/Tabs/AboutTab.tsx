@@ -9,16 +9,17 @@ export const AboutTab: React.FC = () => {
         <section>
           <h2 className="text-xl font-bold text-vscode-keyword mb-2">## About Me</h2>
           <p className="leading-7">
-            Hi, I'm Akshay Saini. I am a software engineer and educator based in India.
-            I have a deep passion for web technologies, specifically <span className="bg-vscode-activity px-1 rounded text-vscode-string">JavaScript</span>.
-            I've worked with companies like Uber and PayTM, building scalable frontend architectures.
+            Hi, I'm Akshay Saini. I am a software engineer and educator based in Dehradun, Uttarakhand, India.
+            I have a deep passion for Software Engineer.
+            I've worked with companies like Uber and PayTM, building scalable products from millions of users.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-vscode-keyword mb-2">## What I Do</h2>
           <ul className="list-disc list-inside space-y-1 ml-2">
-            <li>🚀 Create educational content on YouTube (Namaste JavaScript)</li>
+            <li>🔗 Building <a href="https://namastedev.com" target="_blank" rel="noreferrer" className="text-vscode-accent font-bold hover:underline">NamasteDev.com</a></li>
+            <li>🚀 Create educational content on YouTube</li>
             <li>💻 Speak at tech conferences</li>
             <li>👨‍💻 Mentor aspiring developers</li>
             <li>🌐 Build high-performance web applications</li>
@@ -28,14 +29,14 @@ export const AboutTab: React.FC = () => {
         <section>
           <h2 className="text-xl font-bold text-vscode-keyword mb-2">## Tech Stack</h2>
           <div className="font-mono text-sm bg-vscode-sidebar p-4 rounded-md border border-vscode-activity">
-            <div><span className="text-vscode-function">Frontend</span>: [React, Next.js, Tailwind, Redux]</div>
-            <div><span className="text-vscode-function">Backend</span>: [Node.js, Express, System Design]</div>
-            <div><span className="text-vscode-function">Tools</span>: [Git, Webpack, VS Code]</div>
+            <div><span className="text-vscode-keyword">Frontend</span>: [React, Next.js, Tailwind, Redux]</div>
+            <div><span className="text-vscode-keyword">Backend</span>: [Node.js, Express, System Design]</div>
+            <div><span className="text-vscode-keyword">Tools</span>: [Git, Webpack, VS Code]</div>
           </div>
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-vscode-keyword mb-2">## Philosophy</h2>
+          <h2 className="text-xl font-bold text-vscode-keyword mb-2">## Favorite Quote</h2>
           <blockquote className="border-l-4 border-vscode-accent pl-4 italic opacity-80">
             "Consistency is the key. Keep coding, keep learning."
           </blockquote>

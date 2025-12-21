@@ -15,14 +15,15 @@ export const HomeTab: React.FC = () => {
           <span className="text-vscode-keyword">const</span> <span className="text-vscode-function">developer</span> = {`{`}
           <div className="pl-4">
             name: <span className="text-vscode-string">'Akshay Saini'</span>,<br />
-            role: <span className="text-vscode-string">'Educator & Engineer'</span>,<br />
-            mission: <span className="text-vscode-string">'Namaste JavaScript'</span>
+            location: <span className="text-vscode-string">'Dehradun, India'</span>,<br />
+            bio: <span className="text-vscode-string">'Engineer by profession, teacher by heart ❤️'</span>,<br />
+            mission: <span className="text-vscode-string">'To make my students fall in love with engineering!'</span>
           </div>
           {`};`}
         </div>
 
         <p className="text-lg leading-relaxed mb-6">
-          I teach JavaScript, React, and System Design to hundreds of thousands of developers worldwide.
+          I teach JavaScript , React, Node, DSA and System Design to hundreds of thousands of developers worldwide.
           Creator of <strong className="text-vscode-text font-bold">Namaste JavaScript</strong> and formerly at Uber & PayTM.
         </p>
 

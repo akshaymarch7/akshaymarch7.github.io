@@ -2,25 +2,39 @@ import React from 'react';
 
 const projects = [
   {
-    id: 1,
+    id: 0,
     name: "Namaste JavaScript",
     description: "Deep dive into JS internals. 10M+ views.",
-    link: "https://youtube.com/akshaysaini",
+    link: "https://namastedev.com/learn/namaste-javascript",
     tags: ["Education", "JavaScript", "Core"]
   },
   {
-    id: 2,
+    id: 1,
     name: "Namaste React",
     description: "Zero to Hero React JS course.",
-    link: "https://namastedev.com",
-    tags: ["React", "Frontend", "System Design"]
+    link: "https://namastedev.com/learn/namaste-react",
+    tags: ["React", "Frontend", "JavaScript"]
+  },
+  {
+    id: 2,
+    name: "Namaste Node",
+    description: "Zero to Hero Node JS course.",
+    link: "https://namastedev.com/learn/namaste-node",
+    tags: ["Node", "Backend", "JavaScript"]
   },
   {
     id: 3,
+    name: "Namaste DSA",
+    description: "Zero to Hero DSA course.",
+    link: "https://namastedev.com/learn/namaste-dsa",
+    tags: ["DSA", "Algorithms", "Problem Solving"]
+  },
+  {
+    id: 4,
     name: "Frontend System Design",
     description: "Architecture patterns for large scale apps.",
     link: "https://namastedev.com",
-    tags: ["Architecture", "Scalability"]
+    tags: ["Architecture", "Scalability", "Frontend"]
   }
 ];
 
@@ -33,31 +47,31 @@ export const ProjectsTab: React.FC = () => {
 
       {projects.map((project, index) => (
         <div key={project.id} className="pl-4 hover:bg-vscode-lineHighlight rounded group transition-colors">
-          <span className="text-vscode-text">{`{`}</span>
+          <span className="text-yellow-400">{`{`}</span>
           <div className="pl-4">
             <div>
-              <span className="text-vscode-string">"id"</span>: <span className="text-vscode-number">{project.id}</span>,
+              <span className="text-vscode-variable">"id"</span>: <span className="text-vscode-number">{project.id}</span>,
             </div>
             <div>
-              <span className="text-vscode-string">"name"</span>: <span className="text-vscode-string">"{project.name}"</span>,
+              <span className="text-vscode-variable font-bold">"name"</span>: <span className="text-vscode-string">"{project.name}"</span>,
             </div>
             <div>
-              <span className="text-vscode-string">"description"</span>: <span className="text-vscode-string">"{project.description}"</span>,
+              <span className="text-vscode-variable">"description"</span>: <span className="text-vscode-string">"{project.description}"</span>,
             </div>
             <div>
-              <span className="text-vscode-string">"link"</span>: <a href={project.link} target="_blank" rel="noreferrer" className="text-vscode-string underline decoration-vscode-string cursor-pointer">"{project.link}"</a>,
+              <span className="text-vscode-variable">"link"</span>: <a href={project.link} target="_blank" rel="noreferrer" className="text-vscode-string underline decoration-vscode-string cursor-pointer">"{project.link}"</a>,
             </div>
             <div>
-              <span className="text-vscode-string">"tags"</span>: <span className="text-vscode-text">[</span>
+              <span className="text-vscode-variable">"tags"</span>: <span className="text-purple-400">[</span>
               {project.tags.map((tag, i) => (
                 <span key={tag}>
                   <span className="text-vscode-string">"{tag}"</span>{i < project.tags.length - 1 && ","}
                 </span>
               ))}
-              <span className="text-vscode-text">]</span>
+              <span className="text-purple-400">]</span>
             </div>
           </div>
-          <span className="text-vscode-text">{`}`}{index < projects.length - 1 && ","}</span>
+          <span className="text-yellow-400">{`}`}{index < projects.length - 1 && ","}</span>
         </div>
       ))}
 

@@ -1,39 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const videos = [
-    { title: "Closures in JS", views: "1.2M views", duration: "18:20", thumb: "https://picsum.photos/300/170?random=1" },
-    { title: "Event Loop", views: "900K views", duration: "22:15", thumb: "https://picsum.photos/300/170?random=2" },
-    { title: "Promises Explained", views: "850K views", duration: "25:00", thumb: "https://picsum.photos/300/170?random=3" },
-    { title: "Async Await", views: "700K views", duration: "15:45", thumb: "https://picsum.photos/300/170?random=4" },
-    { title: "Hoisting", views: "600K views", duration: "12:10", thumb: "https://picsum.photos/300/170?random=5" },
-    { title: "Map Filter Reduce", views: "1.5M views", duration: "30:00", thumb: "https://picsum.photos/300/170?random=6" },
-];
+interface Video {
+    title: string;
+    link: string;
+    thumbnail: string;
+    pubDate: string;
+}
+
+const CHANNEL_ID = 'UC3N9i_KvKZYP4F84FPIzgPQ';
+const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
 
 export const VideosTab: React.FC = () => {
+    const [videos, setVideos] = useState<Video[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.items) {
+                    setVideos(data.items);
+                }
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Failed to fetch videos", err);
+                setLoading(false);
+            });
+    }, []);
+
     return (
         <div className="p-6 h-full overflow-y-auto bg-vscode-bg font-sans">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-vscode-text">Popular Videos</h2>
-                <span className="text-xs bg-vscode-activity px-2 py-1 rounded text-vscode-text opacity-50">Component: VideoGrid.tsx</span>
+                <h2 className="text-xl font-bold text-vscode-text">Latest Videos from YouTube - <a className="underline" href="https://www.youtube.com/@akshaysaini" target="_blank" rel="noreferrer">Akshay Saini</a></h2>
+                <span className="text-xs bg-vscode-activity px-2 py-1 rounded text-vscode-text opacity-50">Fetching from YouTube API...</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {videos.map((vid, idx) => (
-                    <div key={idx} className="bg-vscode-sidebar hover:bg-vscode-lineHighlight transition-colors rounded-lg overflow-hidden border border-vscode-activity group cursor-pointer">
-                        <div className="relative">
-                            <img src={vid.thumb} alt={vid.title} className="w-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
-                            <div className="absolute bottom-2 right-2 bg-black/80 px-1.5 py-0.5 text-xs rounded text-white">{vid.duration}</div>
-                        </div>
-                        <div className="p-3">
-                            <h3 className="font-medium text-vscode-text group-hover:text-vscode-accent transition-colors truncate">{vid.title}</h3>
-                            <div className="flex items-center justify-between mt-2 text-xs text-gray-500">
-                                <span>Namaste JavaScript</span>
-                                <span>{vid.views}</span>
+            {loading ? (
+                <div className="text-vscode-text opacity-50">Loading videos...</div>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {videos.map((vid, idx) => (
+                        <a
+                            key={idx}
+                            href={vid.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-vscode-sidebar hover:bg-vscode-lineHighlight transition-colors rounded-lg overflow-hidden border border-vscode-activity group cursor-pointer block"
+                        >
+                            <div className="relative aspect-video">
+                                <img src={vid.thumbnail} alt={vid.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
                             </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                            <div className="p-3">
+                                <h3 className="font-medium text-vscode-text group-hover:text-vscode-accent transition-colors text-sm line-clamp-2" title={vid.title}>{vid.title}</h3>
+                                <div className="flex items-center justify-between mt-2 text-xs text-vscode-text opacity-60">
+                                    <span>{new Date(vid.pubDate).toLocaleDateString()}</span>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

@@ -7,10 +7,43 @@ import { Terminal } from './Terminal';
 import { useEditor } from '../../context/EditorContext';
 
 export const Layout: React.FC = () => {
-  const { 
+  const {
     setSidebarWidth, sidebarVisible,
-    terminalHeight, setTerminalHeight, terminalVisible 
+    terminalHeight, setTerminalHeight, terminalVisible,
+    toggleTerminal
   } = useEditor();
+
+  // Keyboard Shortcuts
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check if Meta (Mac) or Ctrl (Windows) is pressed
+      const isMeta = e.metaKey || e.ctrlKey;
+
+      if (isMeta && e.key === 'k') {
+        e.preventDefault();
+        alert("🔍 Searching for inspiration... (This is a fake search bar!)");
+      }
+
+      if (isMeta && e.key === 'p') {
+        e.preventDefault();
+        alert("📂 Opening all the files... (Just kidding, use the explorer!)");
+      }
+
+      if (isMeta && e.key === 's') {
+        e.preventDefault();
+        alert("❤️ Saved to local storage (in your heart)!");
+      }
+
+      // Alt + T to toggle terminal
+      if (e.altKey && e.key === 't') {
+        e.preventDefault();
+        toggleTerminal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [toggleTerminal]);
 
   const startResizingSidebar = useCallback(() => {
     const onMouseMove = (e: MouseEvent) => {
@@ -43,11 +76,11 @@ export const Layout: React.FC = () => {
     const onMouseMove = (e: MouseEvent) => {
       const delta = startY - e.clientY;
       let newHeight = startHeight + delta;
-      
+
       // Constraints
       if (newHeight < 100) newHeight = 100;
       if (newHeight > window.innerHeight - 200) newHeight = window.innerHeight - 200;
-      
+
       setTerminalHeight(newHeight);
     };
 
@@ -69,26 +102,26 @@ export const Layout: React.FC = () => {
       <div className="flex flex-1 overflow-hidden">
         <ActivityBar />
         <Sidebar />
-        
+
         {/* Sidebar Resizer */}
         {sidebarVisible && (
-            <div 
-                className="w-1 bg-transparent hover:bg-vscode-accent cursor-col-resize hover:delay-100 active:bg-vscode-accent z-10"
-                onMouseDown={startResizingSidebar}
-            />
+          <div
+            className="w-1 bg-transparent hover:bg-vscode-accent cursor-col-resize hover:delay-100 active:bg-vscode-accent z-10"
+            onMouseDown={startResizingSidebar}
+          />
         )}
 
         <div className="flex-1 flex flex-col min-w-0 bg-vscode-bg">
           <EditorArea />
-          
+
           {/* Terminal Resizer */}
           {terminalVisible && (
-              <div 
-                className="h-1 bg-transparent hover:bg-vscode-accent cursor-row-resize hover:delay-100 active:bg-vscode-accent z-10"
-                onMouseDown={startResizingTerminal}
-              />
+            <div
+              className="h-1 bg-transparent hover:bg-vscode-accent cursor-row-resize hover:delay-100 active:bg-vscode-accent z-10"
+              onMouseDown={startResizingTerminal}
+            />
           )}
-          
+
           <Terminal />
         </div>
       </div>
