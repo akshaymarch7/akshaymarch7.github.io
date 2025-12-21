@@ -36,11 +36,11 @@ export const AboutTab: React.FC = () => {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-vscode-keyword mb-2">## Favorite Quote</h2>
-          <blockquote className="border-l-4 border-vscode-accent pl-4 italic opacity-80">
-            "Consistency is the key. Keep coding, keep learning."
-          </blockquote>
+          <h2 className="text-xl font-bold text-vscode-keyword mb-2">## Promotions and Collaborations</h2>
+          For promotions, collaborations and inviting me for events/talks,<br></br>
+          please reach out to me on <a href="mailto:akshaysaini.in@gmail.com" target="_blank" rel="noreferrer" className="text-vscode-accent font-bold hover:underline">akshaysaini.in@gmail.com</a>
         </section>
+
       </div>
     </div>
   );
