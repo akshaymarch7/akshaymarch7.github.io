@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshay Saini | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              vscode: {
+                bg: 'var(--vscode-bg)',
+                sidebar: 'var(--vscode-sidebar)',
+                activity: 'var(--vscode-activity)',
+                tabActive: 'var(--vscode-tabActive)',
+                tabInactive: 'var(--vscode-tabInactive)',
+                panel: 'var(--vscode-panel)',
+                statusBar: 'var(--vscode-statusBar)',
+                text: 'var(--vscode-text)',
+                accent: 'var(--vscode-accent)',
+                selection: 'var(--vscode-selection)',
+                lineHighlight: 'var(--vscode-lineHighlight)',
+                keyword: 'var(--vscode-keyword)',
+                string: 'var(--vscode-string)',
+                function: 'var(--vscode-function)',
+                comment: 'var(--vscode-comment)',
+                number: 'var(--vscode-number)',
+                type: 'var(--vscode-type)',
+                variable: 'var(--vscode-variable)',
+                // Icon colors
+                iconActive: 'var(--vscode-icon-active)',
+                iconInactive: 'var(--vscode-icon-inactive)',
+              },
+            },
+            fontFamily: {
+              mono: ['Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'monospace'],
+              sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        /* Dark Theme (Default) */
+        --vscode-bg: #1e1e1e;
+        --vscode-sidebar: #252526;
+        --vscode-activity: #333333;
+        --vscode-tabActive: #1e1e1e;
+        --vscode-tabInactive: #2d2d2d;
+        --vscode-panel: #1e1e1e;
+        --vscode-statusBar: #007acc;
+        --vscode-text: #d4d4d4;
+        --vscode-accent: #007acc;
+        --vscode-selection: #264f78;
+        --vscode-lineHighlight: #2f3139;
+        
+        /* Syntax Highlighting - Dark */
+        --vscode-keyword: #569cd6;
+        --vscode-string: #ce9178;
+        --vscode-function: #dcdcaa;
+        --vscode-comment: #6a9955;
+        --vscode-number: #b5cea8;
+        --vscode-type: #4ec9b0;
+        --vscode-variable: #9cdcfe;
+
+        /* Icons - Dark */
+        --vscode-icon-active: #ffffff;
+        --vscode-icon-inactive: #6b7280;
+      }
+
+      .light-theme {
+        /* Light Theme */
+        --vscode-bg: #ffffff;
+        --vscode-sidebar: #f3f3f3;
+        --vscode-activity: #e8e8e8;
+        --vscode-tabActive: #ffffff;
+        --vscode-tabInactive: #ececec;
+        --vscode-panel: #ffffff;
+        --vscode-statusBar: #007acc;
+        --vscode-text: #333333;
+        --vscode-accent: #005fb8;
+        --vscode-selection: #add6ff;
+        --vscode-lineHighlight: #eff6fc;
+
+        /* Syntax Highlighting - Light */
+        --vscode-keyword: #0000ff;
+        --vscode-string: #a31515;
+        --vscode-function: #795e26;
+        --vscode-comment: #008000;
+        --vscode-number: #098658;
+        --vscode-type: #267f99;
+        --vscode-variable: #001080;
+
+        /* Icons - Light */
+        --vscode-icon-active: #424242;
+        --vscode-icon-inactive: #888888;
+      }
+
+      body {
+        background-color: var(--vscode-bg);
+        color: var(--vscode-text);
+        overflow: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--vscode-bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #424242;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4f4f4f;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
