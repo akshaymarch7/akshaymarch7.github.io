@@ -6,7 +6,7 @@ export const HomeTab: React.FC = () => {
   const { openFile } = useEditor();
 
   return (
-    <div className="p-8 h-full overflow-y-auto bg-vscode-bg text-gray-300 font-sans selection:bg-vscode-selection">
+    <div className="p-8 h-full overflow-y-auto bg-vscode-bg text-vscode-text font-sans selection:bg-vscode-selection">
       <Seo
         title="Home - Akshay Saini"
         description="Akshay Saini - Software Engineer, Educator, and Creator of Namaste JavaScript."
@@ -15,7 +15,7 @@ export const HomeTab: React.FC = () => {
       <div className="max-w-3xl mx-auto mt-10">
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-vscode-text tracking-tight">
               Hello, I'm <span className="text-vscode-accent">Akshay Saini</span>
             </h1>
           </div>
@@ -40,13 +40,13 @@ export const HomeTab: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-4">
           <button
             onClick={() => openFile('projects')}
-            className="px-6 py-3 bg-vscode-button text-white rounded hover:bg-opacity-90 transition-colors font-medium"
+            className="px-6 py-3 bg-vscode-button text-vscode-buttonFg rounded hover:bg-opacity-90 transition-colors font-medium"
           >
             View Projects
           </button>
           <button
             onClick={() => openFile('contact')}
-            className="px-6 py-3 border border-vscode-button text-vscode-button rounded hover:bg-vscode-button hover:text-white transition-colors font-medium"
+            className="px-6 py-3 border border-vscode-button text-vscode-button rounded hover:bg-vscode-button hover:text-vscode-buttonFg transition-colors font-medium"
           >
             Contact Me
           </button>

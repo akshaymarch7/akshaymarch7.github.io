@@ -53,7 +53,7 @@ export const ProjectsTab: React.FC = () => {
 
       {projects.map((project, index) => (
         <div key={project.id} className="pl-4 hover:bg-vscode-lineHighlight rounded group transition-colors">
-          <span className="text-yellow-400">{`{`}</span>
+          <span className="text-vscode-bracket">{`{`}</span>
           <div className="pl-4">
             <div>
               <span className="text-vscode-variable">"id"</span>: <span className="text-vscode-number">{project.id}</span>,
@@ -68,16 +68,16 @@ export const ProjectsTab: React.FC = () => {
               <span className="text-vscode-variable">"link"</span>: <a href={project.link} target="_blank" rel="noreferrer" className="text-vscode-string underline decoration-vscode-string cursor-pointer">"{project.link}"</a>,
             </div>
             <div>
-              <span className="text-vscode-variable">"tags"</span>: <span className="text-purple-400">[</span>
+              <span className="text-vscode-variable">"tags"</span>: <span className="text-vscode-bracket">[</span>
               {project.tags.map((tag, i) => (
                 <span key={tag}>
                   <span className="text-vscode-string">"{tag}"</span>{i < project.tags.length - 1 && ","}
                 </span>
               ))}
-              <span className="text-purple-400">]</span>
+              <span className="text-vscode-bracket">]</span>
             </div>
           </div>
-          <span className="text-yellow-400">{`}`}{index < projects.length - 1 && ","}</span>
+          <span className="text-vscode-bracket">{`}`}{index < projects.length - 1 && ","}</span>
         </div>
       ))}
 

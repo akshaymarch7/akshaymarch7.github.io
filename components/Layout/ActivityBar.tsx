@@ -40,7 +40,7 @@ export const ActivityBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-12 bg-vscode-activity flex flex-col items-center py-2 z-20 shrink-0">
+    <div className="w-12 bg-vscode-activity flex flex-col items-center py-2 z-[110] shrink-0">
       <IconWrapper active={sidebarVisible} onClick={toggleSidebar}>
         <Files size={24} strokeWidth={1.5} />
       </IconWrapper>
@@ -56,13 +56,13 @@ export const ActivityBar: React.FC = () => {
       <IconWrapper>
         <Box size={24} strokeWidth={1.5} />
       </IconWrapper>
-      
+
       <div className="flex-1" /> {/* Spacer */}
-      
+
       <IconWrapper>
         <User size={24} strokeWidth={1.5} />
       </IconWrapper>
-      
+
       <div className="relative w-full" ref={settingsRef}>
         <IconWrapper onClick={() => setShowSettingsMenu(!showSettingsMenu)}>
           <Settings size={24} strokeWidth={1.5} />
@@ -71,9 +71,9 @@ export const ActivityBar: React.FC = () => {
         {showSettingsMenu && (
           <div className="absolute left-10 bottom-2 w-56 bg-vscode-bg border border-vscode-activity shadow-xl rounded-md py-1 z-50 text-vscode-text">
             <div className="px-4 py-2 border-b border-vscode-activity mb-1">
-               <span className="text-xs font-semibold opacity-50 uppercase tracking-wider">Settings</span>
+              <span className="text-xs font-semibold opacity-50 uppercase tracking-wider">Settings</span>
             </div>
-            <button 
+            <button
               className="w-full text-left px-4 py-2 hover:bg-vscode-activity flex items-center justify-between group"
               onClick={() => { toggleTheme(); setShowSettingsMenu(false); }}
             >

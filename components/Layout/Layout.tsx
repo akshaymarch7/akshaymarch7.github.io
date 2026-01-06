@@ -71,6 +71,30 @@ export const Layout: React.FC = () => {
     document.body.style.userSelect = 'none';
   }, [setSidebarWidth]);
 
+  // Touch support for resizing
+  const startResizingSidebarTouch = useCallback((touchStartEvent: React.TouchEvent) => {
+    const startX = touchStartEvent.touches[0].clientX;
+    const startWidth = sidebarVisible ? 250 : 0; // approximation if needed, but we rely on current state elsewhere
+
+    const onTouchMove = (e: TouchEvent) => {
+      // 48 is ActivityBar
+      let newWidth = e.touches[0].clientX - 48;
+      if (newWidth < 150) newWidth = 150;
+      if (newWidth > window.innerWidth - 50) newWidth = window.innerWidth - 50;
+      setSidebarWidth(newWidth);
+    };
+
+    const onTouchEnd = () => {
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
+      document.body.style.userSelect = 'auto';
+    };
+
+    document.addEventListener('touchmove', onTouchMove);
+    document.addEventListener('touchend', onTouchEnd);
+    document.body.style.userSelect = 'none';
+  }, [setSidebarWidth]);
+
   const startResizingTerminal = useCallback((mouseDownEvent: React.MouseEvent) => {
     const startY = mouseDownEvent.clientY;
     const startHeight = terminalHeight;
@@ -106,34 +130,37 @@ export const Layout: React.FC = () => {
         description="Portfolio of Akshay Saini, Software Engineer and Educator."
         keywords={['Akshay Saini', 'Portfolio', 'Software Engineer', 'Web Development', 'React']}
       />
-      <div className="flex flex-1 overflow-hidden">
+      {/* Backdrop for Mobile Sidebar - Root Level for Safety */}
+      {sidebarVisible && (
+        <div
+          className="fixed inset-0 bg-black/50 z-[90] md:hidden cursor-pointer backdrop-blur-sm"
+          onClick={() => setSidebarVisible(false)}
+        />
+      )}
+
+      <div className="flex flex-1 overflow-hidden relative">
         <ActivityBar />
+
 
         {/* Sidebar - Overlay on Mobile, Relative on Desktop */}
         <div className={`
-            absolute md:relative z-20 h-full flex transition-all duration-300 ease-in-out
+            absolute top-0 bottom-0 left-12 md:static z-[100] h-full flex transition-all duration-300 ease-in-out
             ${sidebarVisible ? 'translate-x-0' : '-translate-x-full md:translate-x-0 md:hidden'}
             ${!sidebarVisible && 'md:!hidden'}
         `}>
           <Sidebar />
         </div>
 
-        {/* Backdrop for Mobile Sidebar */}
+        {/* Sidebar Resizer - Desktop & Mobile */}
         {sidebarVisible && (
           <div
-            className="fixed inset-0 bg-black/50 z-10 md:hidden"
-            onClick={() => setSidebarVisible(false)}
-          />
-        )}
-
-        {/* Sidebar Resizer */}
-        {sidebarVisible && (
-          <div
-            className="w-1 bg-transparent hover:bg-vscode-accent cursor-col-resize hover:delay-100 active:bg-vscode-accent z-10"
+            className="w-4 -ml-2 bg-transparent hover:bg-vscode-accent/50 cursor-col-resize active:bg-vscode-accent z-[105] touch-none"
             onMouseDown={startResizingSidebar}
+            onTouchStart={startResizingSidebarTouch}
           />
         )}
 
+        {/* Content Area */}
         <div className="flex-1 flex flex-col min-w-0 bg-vscode-bg">
           <EditorArea />
 
@@ -147,6 +174,8 @@ export const Layout: React.FC = () => {
 
           <Terminal />
         </div>
+
+        {/* Backdrop removed from here */}
       </div>
       <StatusBar />
     </div>

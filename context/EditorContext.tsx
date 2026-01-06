@@ -9,7 +9,7 @@ export const EditorProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [openFiles, setOpenFiles] = useState<string[]>(INITIAL_OPEN_FILES);
   const [sidebarVisible, setSidebarVisible] = useState(true);
   const [terminalVisible, setTerminalVisible] = useState(true);
-  const [sidebarWidth, setSidebarWidth] = useState(250);
+  const [sidebarWidth, setSidebarWidth] = useState(window.innerWidth < 768 ? 180 : 250);
   const [terminalHeight, setTerminalHeight] = useState(200);
   const [theme, setTheme] = useState<Theme>('dark');
 
